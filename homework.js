@@ -65,7 +65,7 @@ async function getProductsSafe() {
 		}
 		
 		const data = await response.json();
-		if (data.products.length == 0){
+		if (data.products.length === 0){
 			throw new Error("回傳資料為空");
 		}
 		return {
@@ -74,7 +74,8 @@ async function getProductsSafe() {
 		}
 	} catch (err){
 		return {
-			success: false, error: err,
+			success: false, 
+			error: err,
 		}
 	}
 }
